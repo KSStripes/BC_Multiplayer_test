@@ -8,16 +8,29 @@ public class NetworkPlayerController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!IsOwner) return; // Ensure only the owner can control this player
+        if (!IsOwner) return; // only the owner client can control this player
 
-        float h = Input.GetAxis("Horizontal"); // Get left/right input (-1 to 1)
-        float v = Input.GetAxis("Vertical");   // Get forward/back input (-1 to 1)
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
         Vector3 input = new Vector3(h, 0, v); // Create movement vector
 
-        // Move the player based on input, speed, and frame time
-        transform.Translate(input * moveSpeed * Time.deltaTime);
-        
+        // Rotate the tank based on input, adjusting for tank rotation
+        if (h > 1)
+        {
+            // Rotate right
+        }
+        else if (h < 0)
+        {
+            // Rotate left
+        }
+
+        // Move the tank forward/backward based on vertical input
+        Vector3 movement = new Vector3(0, 0, v) * moveSpeed * Time.deltaTime;
+        transform.position += movement;
+
+        //transform.Translate(input * moveSpeed * Time.deltaTime);
+
         // if (input != Vector3.zero){ // Only move if there's input
         //     MoveServerRpc(input); // Send movement to server
         // }
