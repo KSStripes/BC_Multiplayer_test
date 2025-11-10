@@ -15,4 +15,10 @@ public class ServerButtons : MonoBehaviour
         this.gameObject.SetActive(false);
         NetworkManager.Singleton.StartClient();
     }
+
+    public void StartServer()
+    {
+        this.gameObject.SetActive(false);
+        NetworkManager.Singleton.StartServer();
+    }
 }

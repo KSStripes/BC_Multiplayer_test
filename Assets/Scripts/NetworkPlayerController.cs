@@ -1,7 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 
-public class NewMonoBehaviourScript : NetworkBehaviour
+public class NetworkPlayerController : NetworkBehaviour
 {
     [SerializeField] private float moveSpeed = 15f; // Speed of player movement
 

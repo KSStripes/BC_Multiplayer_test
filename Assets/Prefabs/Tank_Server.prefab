@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2355758751629003232}
   - component: {fileID: 7400877116133909698}
   - component: {fileID: 916086545094317960}
-  - component: {fileID: 1582730323471178292}
+  - component: {fileID: 8068600611365126219}
   m_Layer: 0
-  m_Name: Tank
+  m_Name: Tank_Server
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2547487830
+  GlobalObjectIdHash: 460373350
   InScenePlacedSourceGlobalObjectIdHash: 2547487830
   DeferredDespawnTick: 0
   Ownership: 1
@@ -163,7 +163,7 @@ MonoBehaviour:
   RotationMaxInterpolationTime: 0.1
   ScaleLerpSmoothing: 1
   ScaleMaxInterpolationTime: 0.1
-  AuthorityMode: 1
+  AuthorityMode: 0
   TickSyncChildren: 0
   UseUnreliableDeltas: 0
   SyncPositionX: 1
@@ -185,7 +185,7 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &1582730323471178292
+--- !u!114 &8068600611365126219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2001531481616857505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5940164a0a7ee4b0787bfad1db653374, type: 3}
+  m_Script: {fileID: 11500000, guid: a2dc0119127664ad784b2e0cb1e69c42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  m_EditorClassIdentifier: Assembly-CSharp::NetworkServerPlayerController
   ShowTopMostFoldoutHeaderGroup: 1
   moveSpeed: 15
