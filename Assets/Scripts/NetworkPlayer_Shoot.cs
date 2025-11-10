@@ -5,7 +5,6 @@ public class NetworkPlayer_Shoot : NetworkBehaviour
 {
     [SerializeField] private GameObject barrelEnd;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] float bulletSpeed = 50f;
 
     // Update is called once per frame
     private void Update()

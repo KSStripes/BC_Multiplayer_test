@@ -42,8 +42,8 @@ public class NetworkPlayerController : NetworkBehaviour
         if (!IsOwner)
         {
             //PlayerHUD.SetActive(false);
-            healthBar.maxValue = maxHealth;
-            healthBar.value = health.Value;
+            //healthBar.maxValue = maxHealth;
+            //healthBar.value = health.Value;
         }
 
         GetName();
@@ -131,7 +131,9 @@ public class NetworkPlayerController : NetworkBehaviour
 
     public void OnHealthChanged(int oldValue, int newValue)
     {
-        healthBar.value = newValue;
+        if(healthBar != null){
+            healthBar.value = newValue;
+        }
     }
 
     public void TakeDamage(int amount)

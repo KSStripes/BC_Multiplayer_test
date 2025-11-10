@@ -24,6 +24,11 @@ public class Bullet : NetworkBehaviour
         if (IsServer) 
         {
             NetworkObject.Despawn();
+            if (collision.gameObject.TryGetComponent<NetworkPlayerController>(out NetworkPlayerController player))
+            {
+                // Apply damage to player
+                player.TakeDamage(10);
+            }
         }
     }
 }

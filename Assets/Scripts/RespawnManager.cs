@@ -1,16 +1,33 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class RespawnManager : MonoBehaviour
+public class RespawnManager : NetworkBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Transform[] spawnPoints;
+
+    public static RespawnManager Instance;
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RespawnPlayer(NetworkObject playerObject)
     {
-        
+        if (!IsServer) return;
+
+        int index = Random.Range(0, spawnPoints.Length);
+        Transform spawnPoint = spawnPoints[index];
+
+        playerObject.transform.position = spawnPoint.position;
+        playerObject.transform.rotation = spawnPoint.rotation;
     }
+
 }
